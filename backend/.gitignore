@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+.env*
+
+# Virtual environments
+venv/
+.env/
+
+# VS Code
+.vscode/
+
+# Database
+*.db
+*.sqlite3
+
+# Uvicorn logs
+*.log
+
+# Lock files
+uv.lock
+
+# Test outputs
+htmlcov/
+.coverage
+
+# OS files
+.DS_Store
+Thumbs.db
