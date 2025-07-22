@@ -1,7 +1,7 @@
 import 'react';
 import { SignIn, SignUp, SignedIn, SignedOut } from '@clerk/clerk-react';
 
-export function AuthenticationPage() {
+const AuthenticationPage = () => {
   return (
     <div className='authentication-wrapper'>
       <SignedOut>
@@ -15,4 +15,5 @@ export function AuthenticationPage() {
       </SignedIn>
     </div>
   );
-}
+};
+export default AuthenticationPage;
