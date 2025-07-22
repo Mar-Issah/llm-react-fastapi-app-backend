@@ -2,11 +2,12 @@ import 'react';
 import { useState, useEffect } from 'react';
 import ChallengChoices from './ChallengeChoices.jsx';
 import { useApi } from '../servicesHook.js';
+import { ToastContainer, toast } from 'react-toastify';
 
 const ChallengeGenerator = () => {
   const [challenge, setChallenge] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
   const [difficulty, setDifficulty] = useState('easy');
   const [quota, setQuota] = useState(null);
   const { makeRequest } = useApi();
@@ -26,7 +27,7 @@ const ChallengeGenerator = () => {
 
   const generateChallenge = async () => {
     setIsLoading(true);
-    setError(null);
+    // setError(null);
 
     try {
       const data = await makeRequest('generate-challenge', {
@@ -36,7 +37,8 @@ const ChallengeGenerator = () => {
       setChallenge(data);
       fetchQuota();
     } catch (err) {
-      setError(err.message || 'Failed to generate challenge.');
+      // setError(err.message || 'Failed to generate challenge.');
+      toast.error(err.message || '❌ Failed to generate challenge.');
     } finally {
       setIsLoading(false);
     }
@@ -72,13 +74,14 @@ const ChallengeGenerator = () => {
         {isLoading ? 'Generating...' : 'Generate Challenge'}
       </button>
 
-      {error && (
+      {/* {error && (
         <div className='error-message'>
           <p>{error}</p>
         </div>
-      )}
+      )} */}
 
       {challenge && <ChallengChoices challenge={challenge} />}
+      <ToastContainer />
     </div>
   );
 };

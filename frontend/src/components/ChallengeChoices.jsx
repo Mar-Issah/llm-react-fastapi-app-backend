@@ -13,7 +13,8 @@ const ChallengeChoices = ({ challenge, showExplanation = false }) => {
     setShouldShowExplanation(true);
   };
 
-  const getOptionClass = (index) => {
+  // style the options based on selection and correctness
+  const styleOptionClass = (index) => {
     if (selectedOption === null) return 'option';
 
     if (index === challenge.correct_answer_id) {
@@ -34,7 +35,7 @@ const ChallengeChoices = ({ challenge, showExplanation = false }) => {
       <p className='challenge-title'>{challenge.title}</p>
       <div className='options'>
         {options.map((option, index) => (
-          <div className={getOptionClass(index)} key={index} onClick={() => handleOptionSelect(index)}>
+          <div className={styleOptionClass(index)} key={index} onClick={() => handleOptionSelect(index)}>
             {option}
           </div>
         ))}
