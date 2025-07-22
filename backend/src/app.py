@@ -6,6 +6,7 @@ from .api import challenge, webhooks
 
 app = FastAPI()
 
+# Allow CORS for all origins
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
