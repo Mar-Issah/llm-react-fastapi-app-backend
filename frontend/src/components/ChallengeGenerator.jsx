@@ -20,6 +20,7 @@ const ChallengeGenerator = () => {
     try {
       const data = await makeRequest('quota');
       setQuota(data);
+      console.log('QUOTA', data);
     } catch (err) {
       console.log(err);
     }

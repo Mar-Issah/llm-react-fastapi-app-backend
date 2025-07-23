@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 from datetime import datetime, timedelta
-from database import models
+from src.database import models
 
 
 #  The db function always take the db as first arg

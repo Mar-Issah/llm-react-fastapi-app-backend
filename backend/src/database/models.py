@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, DateTime
 from datetime import datetime
-from db import Base
+from .db import Base
 
 
 # Below are the models for the database tables. They need to inherit from Base so that SQLAlchemy can manage them.
