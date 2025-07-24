@@ -30,19 +30,6 @@ const ChallengeHistory = () => {
     }
   };
 
-  // if (isLoading) {
-  //   return <div className='loading'>Loading history...</div>;
-  // }
-
-  // if (error) {
-  //   console.error('Error fetching history:', error);
-  //   // return (
-  //   //   <div>
-  //   //     <button onClick={fetchHistory}>Retry</button>
-  //   //   </div>
-  //   // );
-  // }
-
   return (
     <div className='history-panel'>
       <h2>History</h2>

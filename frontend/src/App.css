@@ -5,6 +5,7 @@
   --error-color: #dc2626;
   --text-color: #1f2937;
   --bg-color: #2b333f;
+  --bg-white: #fff;
   --header-bg: #fff;
   --nav-bg: #f0f4fa;
   --shadow: 0 4px 24px rgba(37, 99, 235, 0.08);
@@ -33,7 +34,6 @@ body {
   justify-content: flex-start; /* Align content to the top */
   padding-top: 7rem; /* Add space below the fixed header */
 }
-
 
 .main-header {
   position: fixed;
@@ -89,7 +89,7 @@ body {
 
 .main-nav-link:hover {
   background: var(--primary-color);
-  color: #fff;
+  color: var(--bg-white);
 }
 
 .main-content {
@@ -97,7 +97,7 @@ body {
   max-width: 90%;
   margin: 0 auto;
   padding: 2rem 1rem;
-  background: #fff;
+  background: var(--bg-white);
   border-radius: 16px;
   box-shadow: var(--shadow);
 }
@@ -117,16 +117,18 @@ button:focus-visible {
 
 /* Challenge Generator Styles */
 .challenge-container {
-  /* max-width: 500px;
-  margin: 2rem auto;
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 6px 32px rgba(37, 99, 235, 0.10);
-  padding: 2.5rem 2rem; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.challenge-generator-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  width: 90%;
 }
 
 .quota-display {
@@ -140,7 +142,6 @@ button:focus-visible {
 
 .difficulty-selector {
   margin-bottom: 1.5rem;
-  /* width: 100%; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -163,16 +164,50 @@ button:focus-visible {
   transition: border 0.2s;
 }
 
+.options {
+  margin: 1rem 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.option {
+  padding: 1rem;
+  background-color: var(--nav-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 0.375rem;
+  font-family: monospace;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.option:hover {
+  background-color: #f1f5f9;
+  border-color: var(--primary-color);
+}
+
+.option.selected {
+  background-color: #e0f2fe;
+  border-color: var(--primary-color);
+}
+
+.option.correct {
+  background-color: #dcfce7;
+  border-color: #22c55e;
+}
+
+.option.incorrect {
+  background-color: #fee2e2;
+  border-color: var(--error-color);
+}
 .generate-button {
   background: var(--primary-color);
-  color: #fff;
+  color: var(--bg-white);
   border: none;
   border-radius: 8px;
   padding: 0.75rem 2rem;
   font-size: 1.1rem;
   font-weight: 600;
   box-shadow: var(--shadow);
-  /* margin-bottom: 1.5rem; */
   cursor: pointer;
   transition: background 0.2s, box-shadow 0.2s;
 }
@@ -184,27 +219,37 @@ button:focus-visible {
 
 .generate-button:hover:not(:disabled) {
   background: #1746a2;
-  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.18);
+  box-shadow:  var(--shadow);
 }
 
-/* .error-message {
-  background: #ffe5e5;
-  color: var(--error-color);
-  border-radius: 8px;
-  padding: 0.75rem 1.5rem;
+.challenge-display {
+  background: var(--nav-bg);
+  border-radius: 16px;
+  box-shadow:  var(--shadow);
+  padding: 1rem 1.5rem 0.5rem 1.5rem;
+  margin: auto auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.5rem;
+}
+
+.challenge-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--primary-color);
   margin-bottom: 1rem;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.08);
-} */
-
+  letter-spacing: 0.5px;
+}
 /* Challenge History Styles */
 .history-panel {
-  max-width: 600px;
-  margin: 2rem auto;
-  background: #fff;
+  width: 90%;
+  margin: 1rem auto;
+  background:var(--bg-white);
   border-radius: 18px;
-  /* box-shadow: 0 6px 32px rgba(37, 99, 235, 0.10); */
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -254,7 +299,7 @@ button:focus-visible {
   color: var(--primary-color);
   background: #f0f4fa;
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(37, 99, 235, 0.08);
+  box-shadow:  var(--shadow);
   margin: 2rem 0;
   font-weight: 500;
   letter-spacing: 1px;

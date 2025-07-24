@@ -7,6 +7,7 @@ const ChallengeChoices = ({ challenge, showExplanation = false }) => {
 
   const options = typeof challenge.options === 'string' ? JSON.parse(challenge.options) : challenge.options;
 
+  // handle option select. if the user has already selected an option, then dont allow them to select another option.
   const handleOptionSelect = (index) => {
     if (selectedOption !== null) return;
     setSelectedOption(index);
@@ -36,7 +37,7 @@ const ChallengeChoices = ({ challenge, showExplanation = false }) => {
       <div className='options'>
         {options.map((option, index) => (
           <div className={styleOptionClass(index)} key={index} onClick={() => handleOptionSelect(index)}>
-            {option}
+            {String.fromCharCode(65 + index)}. {option}
           </div>
         ))}
       </div>
