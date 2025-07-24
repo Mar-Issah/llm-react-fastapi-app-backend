@@ -12,7 +12,9 @@ engine = create_engine(DATABASE_URL, echo=True)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
-Base.metadata.create_all(engine)
+from .models import *
+
+Base.metadata.create_all(bind=engine)
 
 
 # Dependency to get the database session injected in FastAPI routes to access the database.

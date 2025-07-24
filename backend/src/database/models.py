@@ -20,9 +20,6 @@ class Challenge(Base):
 class ChallengeQuota(Base):
     __tablename__ = "challenge_quotas"
 
-    # user_id: this is a unique identifier for each user, usually coming from your auth provider (like Clerk).
-    # It ensures each user can have only one quota record.
-    # The unique=True constraint enforces that — 1 quota per user.
     id = Column(Integer, primary_key=True)
     user_id = Column(String, nullable=False, unique=True)
     quota_remaining = Column(Integer, nullable=False, default=50)
