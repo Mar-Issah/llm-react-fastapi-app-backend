@@ -1,0 +1,9 @@
+clerk-backend-api
+fastapi
+langchain
+langchain-anthropic
+python-dotenv
+sqlalchemy
+uvicorn
+svix
+psycopg2-binary
