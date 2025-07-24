@@ -8,8 +8,6 @@ from langchain_core.output_parsers import PydanticOutputParser
 from typing_extensions import Annotated, TypedDict
 from typing import List
 
-# from ..schemas.challenge import ChallengeLLMOutput
-
 load_dotenv()
 
 os.environ.get("LANGCHAIN_API_KEY")
