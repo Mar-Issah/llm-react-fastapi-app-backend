@@ -9,7 +9,10 @@ app = FastAPI()
 # Allow CORS for all origins
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "http://localhost:3000",  # for local dev
+        "https://llm-mcq.vercel.app",  # your deployed frontend
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
