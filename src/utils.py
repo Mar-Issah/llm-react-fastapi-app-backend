@@ -22,6 +22,7 @@ def authenticate_and_get_user_details(request):
                     "http://localhost:5173",
                     "http://localhost:5174",
                     "http://localhost:3000",
+                    "https://llm-mcq.vercel.app",
                 ],
                 jwt_key=os.getenv("JWT_KEY"),
             ),

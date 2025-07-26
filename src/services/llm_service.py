@@ -41,7 +41,7 @@ def generate_challenge_with_ai(difficulty: str) -> Dict[str, Any]:
     For hard questions: Include advanced topics, design patterns, optimization techniques, or complex algorithms.
 
     Return the challenge in the following JSON structure with the following fields:
-    - title: The question title
+    - title: A complete question, written as a full sentence. This will be shown directly to the user.
     - options: A list of 4 possible answer choices
     - correct_answer_id: Index of the correct answer in the options list (0-3)
     - explanation: A detailed explanation of why the correct answer is right
