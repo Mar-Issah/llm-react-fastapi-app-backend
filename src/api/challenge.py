@@ -31,7 +31,7 @@ async def generate_challenge(
         quota = get_challenge_quota(db, user_id)
         if not quota:
             quota = create_challenge_quota(db, user_id)
-
+        # The reset happens anytime the user generates a challenge
         quota = reset_quota_if_needed(db, quota)
 
         if quota.quota_remaining <= 0:

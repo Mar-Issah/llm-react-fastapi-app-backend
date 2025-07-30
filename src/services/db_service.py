@@ -28,7 +28,7 @@ def create_challenge_quota(db: Session, user_id: str):
 
 def reset_quota_if_needed(db: Session, quota: models.ChallengeQuota):
     """
-    Reset the quota if it has been more than 24 hours since the last reset
+    Reset the quota if it has been more than 24 hours since the last reset.
     """
     now = datetime.now()
     if now - quota.last_reset_date > timedelta(hours=24):
