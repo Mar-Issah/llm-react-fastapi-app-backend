@@ -44,9 +44,11 @@ def generate_challenge_with_ai(difficulty: str) -> Dict[str, Any]:
     - title: A complete question, written as a full sentence. This will be shown directly to the user.
     - options: A list of 4 possible answer choices
     - correct_answer_id: Index of the correct answer in the options list (0-3)
-    - explanation: A detailed explanation of why the correct answer is right
+    - explanation: A detailed explanation of why the correct answer is right. Ensure the explanation is clearly written and well-formatted with line breaks where appropriate for readability. Use bullet points, step-by-step reasoning, or short paragraphs to explain the logic
 
     Make sure the options are plausible but with only one clearly correct answer.
+
+    Apply proper operator precedence rules (PEMDAS/BODMAS) when evaluating mathematical expressions in Python. All questions and answers must be verified by running the Python code before returning a response.
     """
     try:
         # Adding output parser
