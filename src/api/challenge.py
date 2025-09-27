@@ -86,6 +86,7 @@ async def get_quota(request: Request, db: Session = Depends(get_db)):
 
     quota = get_challenge_quota(db, user_id)
     if not quota:
+        # create_challenge_quota(db, user_id)
         return {
             "user_id": user_id,
             "quota_remaining": 0,
